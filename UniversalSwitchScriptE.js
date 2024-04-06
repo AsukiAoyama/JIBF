@@ -10,6 +10,12 @@ let ModeElement3 = document.querySelector("#Mode-Element-3");
 let ModeElement4 = document.querySelector("#Mode-Element-4");
 let ModeElement5 = document.querySelector("#Mode-Element-5");
 
+let A = document.querySelector("#A");
+let B = document.querySelector("#B");
+let C = document.querySelector("#C");
+let D = document.querySelector("#D");
+let E = document.querySelector("#E");
+
 let Settings = document.querySelector(".Settings-Container");
 
 let ModeSettings = document.querySelector(".Mode-Settings");
@@ -92,8 +98,23 @@ function OpenModeSettings(){
         };
         xhr.open('GET', '/CheckMode', true);
         xhr.send();
-      }, 500);
+      }, 1000);
     
       function UpdateModeText(state) {
         document.getElementById('Mode').innerHTML = state;
+
+        if ((state === "Einfach-Taster") || (state === "Einfach-Schalter") || (state === "Kreuzschalter")) {
+          A.style.display = "block"; 
+          B.style.display = "none"; 
+          C.style.display = "none"; 
+          D.style.display = "none"; 
+          E.style.display = "none"; 
+      }
+      if ((state === "Zweifach-Taster") || (state === "Zweifach-Schalter")) {
+        A.style.display = "none"; 
+        B.style.display = "block"; 
+        C.style.display = "block"; 
+        D.style.display = "block"; 
+        E.style.display = "block"; 
+    }
       }
