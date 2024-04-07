@@ -462,6 +462,14 @@ setInterval(function() {
             TouchAreaLeft.style.display = "none";
             TouchAreaRight.style.display = "none";
         }
+        if((X == 2) && (stateString === "CT1")){
+            TouchAreaLeft.style.display = "block";
+            TouchAreaRight.style.display = "none";
+        }
+        if((X == 2) && (stateString === "CT0")){
+            TouchAreaLeft.style.display = "none";
+            TouchAreaRight.style.display = "none";
+        }
       }
     
 
